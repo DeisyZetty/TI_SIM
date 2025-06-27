@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Seguro - Cointra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .container img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    .container h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+    .input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    .notice {
+      margin-top: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://www.cointra.com.co/images/logo.svg" alt="Logo Cointra" onerror="this.src='https://via.placeholder.com/120x40?text=COINTRA'">
+    <h2>Portal de autenticación segura</h2>
+    <form onsubmit="mostrarMensaje(event)">
+      <input type="text" class="input" placeholder="Usuario o correo" required>
+      <input type="password" class="input" placeholder="Contraseña" required>
+      <button class="btn" type="submit">Iniciar sesión</button>
+    </form>
+    <div class="notice" id="mensaje" style="display:none">
+      ⚠️ Este fue un <strong>simulacro de ciberseguridad</strong>. No ingrese datos reales en portales no verificados. Si recibió este correo, por favor repórtelo al área de TI.
+    </div>
+  </div>
+
+  <script>
+    function mostrarMensaje(e) {
+      e.preventDefault();
+      document.querySelector('form').style.display = 'none';
+      document.getElementById('mensaje').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
